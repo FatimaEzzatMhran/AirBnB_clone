@@ -1,7 +1,7 @@
 ----------------------------------
 
 <div align="center">
-  <h1>README.md</h1>
+  <h1 style="color:#2ecc71">Welcome to my AirBnB_clone Project</h1>
 </div>
 
 ----------------------------------
