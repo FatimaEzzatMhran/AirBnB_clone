@@ -1,6 +1,6 @@
 ----------------------------------
 
-Welcome to my AirBnB_clone Project
+			Welcome to my AirBnB_clone Project
 
 ----------------------------------
 
