@@ -1,6 +1,8 @@
 ----------------------------------
 
-			Welcome to my AirBnB_clone Project
+<div align="center">
+  <h1>README.md</h1>
+</div>
 
 ----------------------------------
 
