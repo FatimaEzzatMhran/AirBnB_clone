@@ -101,9 +101,10 @@ class TestBaseModel(unittest.TestCase):
         """
         Checks whehter the to_dict method returns correct attrs.
         """
-        kwargs =  {"id": "780",
+        kwargs = {"id": "780",
                   "created_at": "2022-11-05T12:12:12.555555",
-                  "anykey": "value of anykey"}
+                  "anykey": "value of anykey",
+                  "updated_at": "2022-11-05T12:12:12.555555"}
         model7 = BaseModel(**kwargs)
         mydict = model7.to_dict()
         self.assertEqual(mydict["id"], "780")
