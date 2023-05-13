@@ -44,6 +44,27 @@ class FileStorage:
                 dict_storage[key] = value.to_dict()
             json.dump(dict_storage, f)
 
+    def classes(self):
+        """
+        Returns a dict of valid classes and their refrences.
+        """
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.place import Place
+        from models.review import Review
+
+        self.__objects = {
+                'BaseModel': BaseModel,
+                'User': User,
+                'State': State,
+                'City': City,
+                'Amenity': Amenity,
+                'Review': Review
+                }
+
     def reload(self):
         """
         deserializes the JSON file to __objects
