@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
         elif "{}.{}".format(args[0], args[1]) not in objects_dict:
             print("** no instance found **")
         else:
-            del objects_dict["{}.{}".format(args[0], args[1])])
+            del objects_dict["{}.{}".format(args[0], args[1])]
             storage.save()
 
     def do_all(self, args):
@@ -157,13 +157,13 @@ class HBNBCommand(cmd.Cmd):
             obj = objects_dict["{}.{}".format(args[0], args[1])]
             for key, value in eval(args[2]).items():
                 if (key in obj.__class__.__dict__.keys() and
-                        type(obj.__class__.__dict__[key]) in {str, int, float}):
+                        type(obj.__class__.__dict__[key]) in
+                        {str, int, float}):
                     value_type = type(obj.__class__.__dict__[key])
                     obj.__dict__[key] = value_type(value)
                 else:
                     obj.__dict__[key] = value
         storage.save()
-
 
 
 if __name__ == "__main__":
