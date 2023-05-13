@@ -16,6 +16,7 @@ from models.place import Place
 import os
 import unittest
 
+
 class Test_FileStorage(unittest.TestCase):
     """
     Test cases for the FileStorage class
@@ -54,7 +55,6 @@ class Test_FileStorage(unittest.TestCase):
         """
         self.assertTrue(type(models.storage.all()) is dict)
 
-    
     def test_new_method(self):
         """
         Checks the new() method of the FileStorage class.
@@ -98,7 +98,6 @@ class Test_FileStorage(unittest.TestCase):
         review1 = Review()
         amenity1 = Amenity()
 
-
         models.storage.save()
 
         with open("file.json", "r", encoding="utf-8") as f:
@@ -134,6 +133,7 @@ class Test_FileStorage(unittest.TestCase):
         self.assertIn("City." + city1.id, objects)
         self.assertIn("Amenity." + amenity1.id, objects)
         self.assertIn("Review." + review1.id, objects)
+
 
 if __name__ == "__main__":
     unittest.main()
