@@ -24,15 +24,17 @@ class BaseModel:
         from models import storage
         if not kwargs:
             self.id = str(uuid.uuid4())
-            self.created_at = self.updated_at = datetime.now()
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
             storage.new(self)
         else:
             for key, value in kwargs.items():
-                if key != '__class__':
-                    if key in ('created_at', 'updated_at'):
-                        setattr(self, key, datetime.fromisoformate(value))
-                    else:
-                        setattr(self, key, value)
+                if key == "created_at":
+                    self.__dict__["created_at"] = datetime.fromisoformat(value)
+                elif key == "updated_at":
+                    self.__dict__["updated_at"] = datetime.fromisoformat(value)
+                else:
+                    self.__dict__[key] = value
 
     def __str__(self):
         """
@@ -60,8 +62,7 @@ class BaseModel:
 
         mydict = self.__dict__.copy()
         mydict["__class__"] = self.__class__.__name__
-        for key, value in self.__dict__.items():
-            if key in ("created_at", "updated_at"):
-                value = self.__dict__[key].isoformat()
-                mydict[key] = value
+        mydict["created_at"] = mydict["created_at"].isoformat()
+        if "updated_at" in mydict:
+            mydict["updated_at"] = mydict["updated_at"].isoformat()
         return mydict
