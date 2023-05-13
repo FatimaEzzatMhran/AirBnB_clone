@@ -33,7 +33,6 @@ class Test_Amenity(unittest.TestCase):
         self.assertEqual(self.amenity1.name, "")
         self.assertEqual(type(self.amenity1.name), str)
 
+
 if __name__ == "__main__":
     unittest.main()
-
-

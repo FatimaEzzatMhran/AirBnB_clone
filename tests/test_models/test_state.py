@@ -33,6 +33,6 @@ class Test_State(unittest.TestCase):
         self.assertEqual(self.state1.name, "")
         self.assertEqual(type(self.state1.name), str)
 
+
 if __name__ == "__main__":
     unittest.main()
-

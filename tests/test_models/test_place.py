@@ -40,7 +40,6 @@ class Test_Place(unittest.TestCase):
         self.assertTrue(hasattr(self.place1, "latitude"))
         self.assertTrue(hasattr(self.place1, "longitude"))
         self.assertTrue(hasattr(self.place1, "amenity_ids"))
-
         self.assertEqual(self.place1.city_id, "")
         self.assertEqual(self.place1.user_id, "")
         self.assertEqual(self.place1.name, "")
@@ -52,8 +51,6 @@ class Test_Place(unittest.TestCase):
         self.assertEqual(self.place1.latitude, 0.0)
         self.assertEqual(self.place1.longitude, 0.0)
         self.assertEqual(self.place1.amenity_ids, [])
-
-
         self.assertEqual(type(self.place1.city_id), str)
         self.assertEqual(type(self.place1.user_id), str)
         self.assertEqual(type(self.place1.name), str)
@@ -65,7 +62,6 @@ class Test_Place(unittest.TestCase):
         self.assertEqual(type(self.place1.latitude), float)
         self.assertEqual(type(self.place1.longitude), float)
         self.assertEqual(type(self.place1.amenity_ids), list)
-
 
 
 if __name__ == "__main__":
