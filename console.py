@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    storage = models.storage
+    storage = FileStorage()
 
     allowed_classes = ["BaseModel",
                        "User",
