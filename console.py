@@ -144,7 +144,7 @@ class HBNBCommand(cmd.Cmd):
         Usage: all <class name> or Usage: all
         """
         argl = parse(args)
-        if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
+        if len(argl) > 0 and argl[0] not in HBNBCommand.__classes_allowed:
             print("** class doesn't exist **")
         else:
             obj_l = []
@@ -204,7 +204,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 obj.__dict__[argl[2]] = argl[3]
         elif type(eval(argl[2])) == dict:
-            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            obj = objects_dict["{}.{}".format(argl[0], argl[1])]
             for key, value in eval(argl[2]).items():
                 if (key in obj.__class__.__dict__.keys() and
                         type(obj.__class__.__dict__[key]) in {str, int, float}):
