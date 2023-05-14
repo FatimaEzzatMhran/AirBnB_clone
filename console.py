@@ -20,7 +20,6 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    storage = FileStorage()
 
     allowed_classes = ["BaseModel",
                        "User",
@@ -55,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in HBNBCommand.allowed_classes:
             print("** class doesn't exist **")
         else:
-            print(eval(args[0]().id)
+            print(eval(args[0]().id))
             storage.save()
 
     def do_show(self, args):
