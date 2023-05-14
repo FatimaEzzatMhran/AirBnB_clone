@@ -50,14 +50,13 @@ class HBNBCommand(cmd.Cmd):
         Usage: create <class>"""
 
         args = args.split()
-        if len(args) != 1:
+        if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in HBNBCommand.allowed_classes:
             print("** class doesn't exist **")
         else:
-            new_object = eval(args[0])()
-            print(new_object.id)
-            new_object.save()
+            print(eval(args[0]().id)
+            storage.save()
 
     def do_show(self, args):
         """Prints the string rep of an instance based on
